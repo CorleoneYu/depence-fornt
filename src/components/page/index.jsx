@@ -17,15 +17,15 @@ class Page extends Component {
 
     this.state = {
       modules: null,
-      root: null
+      entry: null
     }
   }
 
   render() {
     return (
       <Layout>
-        <Sider>
-          <DepList/>
+        <Sider width="auto">
+          <DepList modules={this.state.modules} entry={this.state.entry}/>
         </Sider>
         <Layout>
           <Content>
@@ -43,7 +43,7 @@ class Page extends Component {
       let data = await getDeps();
       this.setState({
         modules: data.moduleMap,
-        root: data.moduleMap[data.entry]
+        entry: data.entry
       })
     } catch(err) {
       console.log(err);
