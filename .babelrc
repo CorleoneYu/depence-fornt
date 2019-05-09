@@ -1,0 +1,22 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    [
+      "react-css-modules",
+      {
+        "generateScopedName": "[local]--[hash:5]",
+        "webpackHotModuleReloading": true //css热加载
+      }
+    ],
+    ["import", {  //antd 按需加载
+      "libraryName": "antd",
+      "libraryDirectory": "es",
+      "style": "css" // `style: true` 会加载 less 文件
+    }],
+    "@babel/plugin-proposal-class-properties", //支持react中方法 支持 箭头函数 而不用bind
+  ]
+}

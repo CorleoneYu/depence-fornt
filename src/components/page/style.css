@@ -1,0 +1,6 @@
+.page-content {
+  box-sizing: border-box;
+  padding: 24px;
+  background: #fff;
+  min-height: 100vh;
+}
