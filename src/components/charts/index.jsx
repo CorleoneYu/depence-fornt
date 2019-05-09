@@ -227,6 +227,12 @@ class Charts extends Component {
     try {
       let data = await getDeps();
       let {nodes, edges} = this.format(data);
+      this.setState({
+        nodes,
+        edges,
+        modules: data.moduleMap,
+        root: data.moduleMap[data.entry]
+      })
       this.forceChart(nodes, edges)
     } catch(err) {
       console.log(err);
